@@ -1,0 +1,30 @@
+{% extends 'base.html' %} 
+
+{% block title %}Login{% endblock %} 
+
+{% block css%}
+    <link rel="stylesheet" type = "text/css" href="/static/login/css/login.css" media="screen" />
+{% endblock %}
+
+{% block content %}
+            <div id="content-body">
+                <div id="login">
+                    <form id="form-login" action="{% url 'login' %}" method="post">
+                        <h1>Entrar</h1>
+                        {% csrf_token %}
+                            <label>
+                                <span class="input-label">Nome de Usuario:</span>
+                                <input class="input-box" type="text" name="username" placeholder="Digite o nome de usuário">
+                            </label>
+                            <label>
+                                <span class="input-label">Senha:</span>
+                                <input class="input-box" type="password" name="password" placeholder="Digite sua senha">
+                            </label>
+                            {% if erro %}
+                                <div>Erro: Usuário ou senha não encontrados!</div>
+                            {% endif%}
+                            <button id="btn-login" type="submit">Entrar</button>
+                    </form>
+                </div>
+            </div>{% endblock %}
+

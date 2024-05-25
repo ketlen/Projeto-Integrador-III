@@ -1,0 +1,22 @@
+<table>
+    <thead>
+        <tr>
+            <th>Nome</td>
+            <th>Quantidade coletada (Kg)</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% if residuos %}
+            {% for residuo in residuos %}
+            <tr class="t-row">
+                <td class="txt-aling-center">{{residuo.publicado_por}}</td>
+                <td class="txt-aling-center">{{ residuo.total_quantidade_kg|floatformat:3 }} Kg</td>
+            </tr>
+            {% endfor%}
+        {% else %}
+            <tr>
+                <td colspan="2" class="txt-aling-center">Não há dados sobre resíduos coletados.</td>
+            </tr>
+        {% endif %}
+    </tbody>
+</table>

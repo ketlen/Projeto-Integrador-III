@@ -1,0 +1,356 @@
+button {
+    caret-color: transparent;
+}
+
+.accordion {
+    width: 100%;
+}
+
+.accordion-item {
+    margin-bottom: 0.625rem;
+    border: 0.0625rem solid #4a8cb9;
+    border-radius: 0.3125rem;
+    overflow: hidden;
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4a8cb9;
+    padding: 0.625rem;
+    color: white;
+    font-weight: bold;
+}
+
+.accordion-icon {
+    color: white;
+    background-color: #4a8cb9;
+    font-size: 1.5rem;
+    border: 0;
+    width: 1.5625rem;
+    cursor: pointer;
+}
+
+.accordion-icon:hover {
+    background-color: #427ea6;
+}
+
+.accordion-content {
+    background-color: white;
+    height: 0;
+    transition: 0.2s;
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
+}
+
+.accordion-item.active .accordion-content {
+    transition: max-height;
+    height: fit-content;
+    transition: 0.2s;
+    padding: 1.25rem;
+}
+
+.botoes {
+    list-style: none;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.botoes-item {
+    padding-left: 0.625rem;
+}
+
+.botoes-item > button {
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.botoes-item > button > i {
+    font-size: 1rem;
+    padding-right: 0.1875rem;
+}
+
+h4 {
+    font-weight: normal;
+}
+
+.sub-accordion-item {
+    margin-bottom: 0.9375rem;
+    border: 0.0625rem solid #4a8cb9;
+    border-radius: 0.3125rem;
+    overflow: hidden;
+}
+
+.accordion-no-margin {
+    margin-bottom: 0;
+}
+
+.sub-accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4a8cb9;
+    padding: 0.625rem;
+    color: white;
+    font-weight: bold;
+}
+
+.sub-accordion-icon {
+    color: white;
+    background-color: #4a8cb9;
+    font-size: 1.5rem;
+    border: 0;
+    width: 1.5625rem;
+    cursor: pointer;
+}
+
+.sub-accordion-icon:hover {
+    background-color: #427ea6;
+}
+
+.sub-accordion-content {
+    background-color: white;
+    height: 0;
+    transition: 0.2s;
+}
+
+.sub-accordion-item.active .sub-accordion-content {
+    transition: max-height;
+    height: fit-content;
+    transition: 0.2s;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+}
+
+#cadastrar {
+    border: 0.0625rem solid #40a261;
+}
+
+#cadastrar > .sub-accordion-header {
+    background-color: #40a261;
+}
+
+#cadastrar > .sub-accordion-header > .sub-accordion-icon {
+    background-color: #40a261;
+}
+
+#cadastrar > .sub-accordion-header > .sub-accordion-icon:hover {
+    background-color: #399157;
+}
+
+#editar {
+    border: 0.0625rem solid #c98013;
+}
+
+#editar > .sub-accordion-header {
+    background-color: #c98013;
+}
+
+#editar > .sub-accordion-header > .sub-accordion-icon {
+    background-color: #c98013;
+}
+
+#editar > .sub-accordion-header > .sub-accordion-icon:hover {
+    background-color: #955f0e;
+}
+
+#excluir {
+    border: 0.0625rem solid #d2553b;
+}
+
+#excluir > .sub-accordion-header {
+    background-color: #d2553b;
+}
+
+#excluir > .sub-accordion-header > .sub-accordion-icon {
+    background-color: #d2553b;
+}
+
+#excluir > .sub-accordion-header > .sub-accordion-icon:hover {
+    background-color: #bd4c35;
+}
+
+.btn-crud {
+    display: flex;
+    justify-content: center;
+    padding-top: 1.25rem;
+}
+
+.btn-crud > button {
+    padding: 0.3125rem;
+    font-size: 1rem;
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0px 0.0625rem lightgray;
+    padding-bottom: 1.25rem;
+}
+
+input {
+    flex: 1;
+    height: 1.875rem;
+    padding: 0.3125rem;
+    font-size: 1rem;
+}
+
+.input_box{
+    display: flex;
+    flex-direction: column;
+}
+.input_nome {
+    display: block;
+    font-weight: bold;
+    padding-bottom: 0.3125rem;
+}
+
+dialog {
+    margin: auto;
+    width: 25%;
+    height: fit-content;
+    border-radius: 0.03125rem;
+    border-color: lightgray;
+    border-width: 0.0625rem;
+    box-shadow: 0px 0px 1.25rem gray;
+}
+
+#dialog-head {
+    padding: 0.625rem;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    box-shadow: 0px 0.0625rem lightgray;
+}
+
+#dialog-body {
+    min-height: 2.8125rem;
+    max-height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0.625rem;
+}
+
+#dialog-bottom {
+    padding: 0.625rem;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    box-shadow: 0px -0.0625rem lightgray;
+}
+
+#dialog-btn {
+    padding: 0.3125rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#dialog-btn > i {
+    padding-right: 0.3125rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-bottom: 0.0625rem solid gray;
+}
+
+td {
+    padding: 0.625rem;
+}
+
+tbody > tr {
+    border-top: 0.0625rem solid lightgray;
+}
+
+tbody > tr:hover {
+    background-color: lightgray;
+}
+
+th {
+    padding: 0.625rem;
+    border-bottom: 0.0625rem solid gray;
+}
+
+.t-row.selecionado {
+    background-color: #1772f7;
+    color: white;
+}
+
+#t-id {
+    text-align: right;
+}
+
+#t-name {
+    text-align: left;
+}
+
+#t-address {
+    text-align: left;
+}
+
+.loader {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: inline-block;
+    border-top: 0.1875rem solid gray;
+    border-right: 0.1875rem solid transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.txt-aling-center {
+    text-align: center;
+}
+
+dialog[open] {
+    animation: show-dialog 0.5s ease normal;
+}
+
+@keyframes show-dialog {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+.input_box.width-20{
+    width: 20%;
+}
+
+.input_box.width-30{
+    width: 30%;
+}
+
+.input_box.width-40{
+    width: 40%;
+}
+
+.input_box.width-60{
+    width: 60%;
+}

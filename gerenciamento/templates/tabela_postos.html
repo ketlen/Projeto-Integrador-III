@@ -1,0 +1,24 @@
+<table id="tabela_postos">
+    <thead>
+        <tr>
+            <th id="t-id">Indentificador</td>
+            <th id="t-name">Nome</td>
+            <th id="t-address">Endereço</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% if postos %}
+            {% for posto in postos %}
+            <tr class="t-row">
+                <td id="t-id">{{posto.id_posto}}</td>
+                <td id="t-name">{{posto.nome_posto}}</td>
+                <td id="t-address">{{posto.endereco_completo}}</td>
+            </tr>
+            {% endfor%}
+        {% else %}
+            <tr>
+                <td colspan="3" style="text-align: center;">Não há postos cadastrados.</td>
+            </tr>
+        {% endif %}
+    </tbody>
+</table>

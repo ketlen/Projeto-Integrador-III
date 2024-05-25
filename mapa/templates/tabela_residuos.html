@@ -1,0 +1,26 @@
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Quantidade em Kg</th>
+            <th>Data de adição</th>
+            <th>Responsável por publicar</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if residuos %}
+            {% for residuo in residuos %}
+                <tr class="t-row">
+                    <td>{{residuo.id_residuo}}</td>
+                    <td>{{residuo.quantidade_kg}} Kg</td>
+                    <td>{{residuo.publicado_em}}</td>
+                    <td>{{residuo.publicado_por}}</td>
+                </tr>
+            {% endfor%}
+        {% else %}
+            <tr>
+                <td colspan="4">Não existe resíduos para coleta neste endereço.</td>
+            </tr>
+        {% endif %}
+    </tbody>
+</table>

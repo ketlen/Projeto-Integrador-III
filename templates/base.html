@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organe-se - {% block title %}{% endblock %}</title>
+    <link rel="shortcut icon" href="/static/base/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/static/base/css/base.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">{% block css %}{% endblock %}
+</head>
+<body>
+    <header>
+        <div class="d-flex-center">
+            <div id="btn-exp-nav"><i class="bi bi-list"></i></div>
+            <a href="/"><img id="logo" src="/static/base/img/logo.png" alt="Logo da Organe-se"></a>
+        </div>
+        <div class="d-flex-center">
+            {% if not user.is_authenticated %}
+                <a href="/login" class="login"><i class="bi bi-box-arrow-in-right"></i> Entrar</a>
+            {% else%}
+                <span id="welcome">Bem-vindo(a), {{user.username}}!</span>
+                <a href="/logout" class="login"><i class="bi bi-box-arrow-left"></i> Sair</a>
+            {% endif %}
+            <button id="aumentar">A+</button>
+            <button id="diminuir">A-</button>
+        </div>
+    </header>
+    <div id="body">
+        <nav class="side-menu">
+            <ul id="btns-nav">
+                <li class="btn-nav {% block ativo1 %}{% endblock %}">
+                    <a href="/"><i class="bi bi-house-fill"></i> <span>Início</span></a>
+                </li>
+                {% if user.is_authenticated %}
+                    <li class="btn-nav {% block ativo2 %}{% endblock %}">
+                        <a href="/mapa"><i class="bi bi-map-fill"></i> Mapa</a>
+                    </li>
+                {% endif %}
+                {% if user.is_authenticated %}
+                    <li class="btn-nav  {% block ativo3 %}{% endblock %}">
+                        <a href="/gerenciamento"><i class="bi bi-gear-fill"></i> Gerenciamento</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+        <section id="content">{% block content %}{% endblock %}
+        </section>
+        </div>
+    </div>
+    <footer>
+        Projeto Integrador 2 - Compost Collector V2
+    </footer>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="/static/base/js/base.js"></script>
+    <script src="/static/base/js/aumentarfonte.js"></script>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>{% block js %}{% endblock %}
+</body>
+</html>

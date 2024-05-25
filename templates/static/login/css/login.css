@@ -1,0 +1,67 @@
+#content-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+img#logo-body{
+    height: 12rem;
+}
+#login{
+    margin: 3rem;
+    height: 50%;
+    width: 30%;
+    background-color: #222d32;
+    border-radius: 1.875rem;
+    color: white;
+    box-shadow: 0px 0px 1.25rem gray;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;        
+}
+#btn-login{
+    width: 90%;
+    padding: 1rem;
+    font-size: 2rem;
+    background-color: #389042;
+    border-radius: 0.5rem;
+    border-width: 0px;
+    color: white;
+    cursor: pointer;
+    margin-top: 1rem;
+    caret-color: transparent;
+    transition: 0.2s;
+}
+#btn-login:hover{
+    background-color: #00461a;
+    transition: 0.2s;
+}
+#form-login{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+#form-login > h1{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+#form-login > label{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+.input-label{
+    width: 100%;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.input-box{
+    flex: auto;
+    padding: 0.5rem;
+    font-size: 1.25rem;
+}

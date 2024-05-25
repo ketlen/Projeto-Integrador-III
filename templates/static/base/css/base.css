@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+
+button{
+    cursor: pointer;
+}
+btns-social {
+    display: flex;
+    /* justify-content: center; */
+}
+*:focus{
+    outline-style: none;
+}
+header{
+    height: 3.125rem;
+    width: 100%;
+    background-color: #FFF;
+    border-bottom: 0.0625rem solid lightgray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    caret-color: transparent;
+}
+.side-menu{
+    width: 14.8125rem;
+    min-height: calc(100vh - 3.1875rem);
+    max-height: auto;
+    padding-left: 0.1875rem;
+    background-color: #222D32;
+    caret-color: transparent;
+    transition: 0.2s;
+}
+.side-menu.hidden{
+    width: 0px;
+    padding-left: 0px;
+    transition: 0.2s;
+    overflow: hidden;
+}
+#btn-exp-nav{
+    width: 3.125rem;
+    height: 3.125rem;
+    margin-right: 0.75rem;
+    border-right: 0.0625rem solid lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    caret-color: transparent;
+    transition: 0.2s;
+}
+#btn-exp-nav > i{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+#btn-exp-nav:hover{
+    background-color: lightgray;
+    transition: 0.2s;
+}
+#btns-nav{
+    list-style: none;
+}
+.btn-nav{
+    transition: 0.2s;
+}
+.btn-nav:hover,.btn-nav.active{
+    background-color: #1e282c;
+    box-shadow: -0.1875rem 0px 0px white;
+    transition: 0.2s;
+}
+.btn-nav > a{
+    display: block;
+    padding: 0.75rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: white;
+    white-space: nowrap;
+}
+#logo{
+    height: 3.125rem;
+}
+#body{
+    display: flex;
+}
+section#content{
+    flex: 1;
+    padding: 1rem;
+    background-color: #ecf0f5;
+    display: flex;
+    flex-direction: column;
+}
+
+.d-flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#aumentar,#diminuir{
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-width: 0.125rem;
+    border-radius: 0.5rem;
+    background-color: white;
+    transition: 0.2s;
+}
+
+#aumentar:hover,#diminuir:hover{
+    color: white;
+    background-color: black;
+    transition: 0.2s;
+}
+.login{
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: .5rem;
+    font-size: 1.125rem;
+    color: black;
+    border-radius: 1rem;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    transition: 0.2s;
+}
+
+.login:hover{
+    background-color: black;
+    color: white;
+    transition: 0.2s;
+}
+
+footer{
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: .5rem;
+    border-top: 0.0625rem solid lightgray;
+}

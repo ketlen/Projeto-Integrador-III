@@ -1,0 +1,209 @@
+#map{
+    height: 100%;
+    width: 100%;
+}
+
+dialog{
+    margin: auto;
+    width: 65%;
+    height: fit-content;
+    border-radius: .5rem;
+    border-color: lightgray;
+    border-width: 0.0625rem;
+    box-shadow: 0px 0px 1.25rem gray;
+}
+
+dialog > br{
+    font-size: 1rem;
+}
+
+#dialog-head{
+    padding: 1rem;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    box-shadow: 0px 0.0625rem lightgray;
+}
+
+#dialog-body{
+    min-height: 15vh;
+    max-height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+}
+
+#dialog-bottom{
+    padding: 1rem;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    box-shadow: 0px -0.0625rem lightgray;
+}
+
+#dialog-btn{
+    padding: 0.3125rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
+#dialog-btn > i{
+    padding-right: 0.3125rem;
+}
+
+#icone-reciclagem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#icone-reciclagem > img{
+    height: 4.375rem;
+    width: 4.375rem;
+}
+
+button{
+    caret-color: transparent;
+}
+
+table{
+    width: 90%;
+    border-collapse: collapse;
+    border-bottom: 0.0625rem solid gray;
+}
+
+tbody {
+    display: block;
+    max-height: 40vh;
+    overflow: auto;
+}
+
+thead, tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;/* even columns width , fix width of table too*/
+}
+
+td{
+    padding: 0.625rem;
+}
+
+tbody > tr{
+    border-bottom: 0.0625rem solid lightgray;
+}
+
+tbody> tr:hover{
+    background-color: lightgray;
+}
+th{
+    padding: 0.625rem;
+    border-bottom: 0.0625rem solid gray;
+}
+
+.t-row.selected{
+    background-color: #1772f7;
+    color: white;
+}
+
+form{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+label{
+    text-align: left;
+    display: block;
+    font-weight: bold;
+}
+
+.d-flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#btn-show-form{
+    margin-left: 1rem;
+}
+
+button{
+    padding: 0.312rem;
+    font-size: 1rem;
+}
+
+input {
+    height: 1.875rem;
+    padding: 0.3125rem;
+    font-size: 1rem;
+    flex: 1;
+}
+
+.form-residuo-container{
+    display: none;
+    width: 50%;
+}
+
+.form-residuo-container.active{
+    display: block;
+}
+
+dialog[open] {
+    animation: show-dialog 0.5s ease normal;
+}
+
+@keyframes show-dialog {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+.t-row.selecionado{
+    background-color: #1772f7;
+    color: white;
+}
+
+#table-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.loader {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: inline-block;
+    border-top: 3px solid gray;
+    border-right: 3px solid transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+  
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+#qnt-input{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}

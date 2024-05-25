@@ -1,0 +1,160 @@
+{% extends 'base.html' %} 
+
+{% block title %}Gerenciamento{% endblock %}
+
+{% block css %}<link rel="stylesheet" type = "text/css" href="/static/gerenciamento/css/gerenciamento.css" media="screen" />{% endblock %}
+
+{% block ativo3 %}active{% endblock %}
+
+{% block content %}
+    <dialog>
+        <div id="dialog-head">
+            <h1 id="dialog-title">Placeholder title</h1>
+        </div>
+        <div id="dialog-body">
+            <p>Placeholder content</p>
+        </div>
+        <div id="dialog-bottom">
+            <button id="dialog-btn"><i class="bi bi-x-circle-fill"></i>Fechar</button>
+        </div>
+    </dialog>
+    <div class="accordion">
+        <div class="accordion-item">
+            <div class="accordion-header">Recolhimento<button class="accordion-icon">+</button></div>
+            <div class="accordion-content">
+                <h4>Quantidade de resíduos já coletados</h4>
+                <br>
+                <div id="residuos-tabela">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="txt-aling-center">Nome</td>
+                                <th class="txt-aling-center">Quantidade coletada (Kg)</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% if residuos %}
+                                {% for residuo in residuos %}
+                                <tr class="t-row">
+                                    <td class="txt-aling-center">{{residuo.publicado_por}}</td>
+                                    <td class="txt-aling-center">{{ residuo.total_quantidade_kg|floatformat:3 }} Kg</td>
+                                </tr>
+                                {% endfor%}
+                            {% else %}
+                                <tr>
+                                    <td colspan="2" class="txt-aling-center">Não há dados sobre resíduos coletados.</td>
+                                </tr>
+                            {% endif %}
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <ul class="botoes">
+                    <li class="botoes-item"><button id="download-btn" type="button"><i class="bi bi-file-earmark-arrow-down-fill"></i> Download</button></li>
+                    <li class="botoes-item"><button id="atualizar-btn" type="button"><i class="bi bi-arrow-repeat" ></i> Atualizar</button></li>
+                    <li class="botoes-item"><button id="limpar-btn" type="button"><i class="bi bi-trash3-fill"></i> Limpar Dados</button></li>
+                </ul>
+            </div>
+        </div>
+        <div class="accordion-item accordion-no-margin" id="accordion-no-margin">
+            <div class="accordion-header">Pontos de Coleta<button class="accordion-icon">+</button></div>
+            <div class="accordion-content">
+                <h4>Pontos de coletas já cadastrados</h4>
+                <br>
+                <div id="postos-tabela">
+                    <table id="tabela_postos">
+                        <thead>
+                            <tr>
+                                <th id="t-id">Indentificador</td>
+                                <th id="t-name">Nome</td>
+                                <th id="t-address">Endereço</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% if postos %}
+                                {% for posto in postos %}
+                                <tr class="t-row">
+                                    <td id="t-id">{{posto.id_posto}}</td>
+                                    <td id="t-name">{{posto.nome_posto}}</td>
+                                    <td id="t-address">{{posto.endereco_completo}}</td>
+                                </tr>
+                                {% endfor%}
+                            {% else %}
+                                <tr>
+                                    <td colspan="3" style="text-align: center;">Não há postos cadastrados.</td>
+                                </tr>
+                            {% endif %}
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="sub-accordion-item" id="cadastrar">
+                    <div class="sub-accordion-header">Cadastrar novo Ponto de Coleta<button class="sub-accordion-icon">+</button></div>
+                    <div class="sub-accordion-content">
+                        <form class="ajax-form" id="Adicionar" action="{% url 'adicionar' %}" method="POST">{% csrf_token %}
+                            <div class="form-container">
+                                <label class="input_box width-30">
+                                    <span class="input_nome">Nome do Ponto de Coleta</span> 
+                                    <input type="text" name="nome_posto" placeholder="Digite o nome do local do posto de coleta."></Input>
+                                </label>
+                                <label class="input_box width-60">
+                                    <span class="input_nome">Endereço</span>
+                                    <Input type="text" name="endereco_completo" placeholder="Digite o endereço do posto de coleta."></Input>
+                                </label>
+                            </div>
+                            <div class="btn-crud">
+                                <button type="submit">Adicionar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="sub-accordion-item" id="editar">
+                    <div class="sub-accordion-header">Editar um ponto já existente<button class="sub-accordion-icon">+</button></div>
+                    <div class="sub-accordion-content">
+                        <form class="ajax-form" id="Editar" action="{% url 'editar' %}" method="POST" label="Editar">{% csrf_token %}
+                            <div class="form-container">
+                                <label class="input_box width-20">
+                                    <span class="input_nome">ID</span>
+                                    <Input type="number" name="id_posto" min=1 step=1 placeholder="Digite o ID do posto a ser editado."></Input>
+                                </label>
+                                <label class="input_box width-30">
+                                    <span class="input_nome">Nome do Ponto de Coleta</span>
+                                    <input type="text" name="nome_posto" placeholder="Digite o novo nome do local do posto de coleta."></Input>
+                                </label> 
+                                <label class="input_box width-40">
+                                    <span class="input_nome">Endereço</span>
+                                    <Input type="text" name="endereco_completo" placeholder="Digite o novo endereço do posto de coleta."></Input>
+                                </label>
+                            </div>
+                            <div class="btn-crud">
+                                <button type="submit">Editar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="sub-accordion-item accordion-no-margin" id="excluir">
+                    <div class="sub-accordion-header">Excluir um ponto de coleta<button class="sub-accordion-icon">+</button></div>
+                    <div class="sub-accordion-content">
+                        <form class="ajax-form" id="Excluir" action="{% url 'excluir' id=1 %}" method="POST" label="Excluir">{% csrf_token %}
+                            <div class="form-container">
+                                <label class="input_box" style="width: 20%;">
+                                    <span class="input_nome">ID</span>
+                                    <Input type="number" name="id_posto" min=1 step=1 placeholder="Digite o ID do posto a ser excluído."></Input>
+                                </label>
+                            </div>
+                            <div class="btn-crud">
+                                <button type="submit">Excluir</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block js %}
+<script src="/static/gerenciamento/js/gerenciamento.js"></script>
+<script src="/static/gerenciamento/js/ajax.js"></script>
+{% endblock %}
+
