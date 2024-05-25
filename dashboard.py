@@ -27,7 +27,7 @@ col2.plotly_chart(fig_bairro, use_container_width=True)
 
 city_total = df_filtered.groupby("Responsavel")[["Qtde_residuos"]].sum().reset_index()
 fig_operador = px.bar(city_total, x="Responsavel", y="Qtde_residuos", title="Quantidade resíduos coletados por responsável")
-col3.plotly_chart(fig_operador, use_container_width=True) 
+col3.plotly_chart(fig_operador, use_container_width=True)
 
 fig_coleta = px.bar(df_filtered, x="Bairro_coleta", y="Qtde_residuos", title="Quantidade resíduos por bairro", color="Data")
 col4.plotly_chart(fig_coleta, use_container_width=True)

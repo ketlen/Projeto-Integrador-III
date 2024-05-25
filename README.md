@@ -1,4 +1,4 @@
-# Projeto Integrador II
+# Projeto Integrador III
 
 <div align="center" style="display: flex; align-items: center; justify-content: center;">
 
@@ -7,7 +7,7 @@
 
 </div>
 
-<p>Este é um projeto para a disciplina de Projeto Integrador 2 da <a href="https://univesp.br/">UNIVESP</a>.</p>
+<p>Este é um projeto para a disciplina de Projeto Integrador 3 da <a href="https://univesp.br/">UNIVESP</a>.</p>
 <p>O projeto consiste em uma plataforma para a empresa <a href="https://www.instagram.com/organe_se_sjc/">Organe-se</a> de São José dos Campos-SP.</p>
 <p>A plataforma permite o gerenciamento de pontos de coleta de resíduos orgânicos, bem como o registro da coleta dos mesmos.</p>
 
