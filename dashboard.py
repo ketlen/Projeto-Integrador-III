@@ -4,7 +4,7 @@ import plotly.express as px ## construir os gráficos
 
 st.set_page_config(layout="wide")
 
-df = pd.read_excel("Dados.xlsx")
+df = pd.read_excel("Residuos.xlsx")
 ##df["Data"] = pd.to_datetime(["Data"])
 ##df = df.sort_values(["Data"])
 
@@ -15,9 +15,6 @@ df_filtered = df[df["Month"] == month]
 
 col1, col2 = st.columns(2)
 col3, col4 = st.columns(2)
-
-##fig_coleta = px.bar(df_filtered, x="Posto_coleta", y="Qtde_residuos", title="Quantidade resíduos por cliente", color="Bairro_coleta")
-##col1.plotly_chart(fig_coleta, use_container_width=True)
 
 fig_data = px.pie(df_filtered, values="Qtde_residuos", names="Posto_coleta", title="Quantidade de resíduos por cliente")
 col1.plotly_chart(fig_data, use_container_width=True)
